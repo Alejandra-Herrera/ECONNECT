@@ -268,6 +268,7 @@
             <div class="form-group">
                 <label for="correo">Correo Electrónico</label>
                 <input type="email" id="correo" placeholder="tu@email.com" required>
+                <small class="form-text text-muted">Solo se permiten correos con dominios: @cancun.tecnm.mx o @cecyteqroo.edu.mx</small>
             </div>
             <div class="form-group">
                 <label for="nombre">Nombre</label>
@@ -473,16 +474,22 @@
                                 <span class="challenge-badge points">75 puntos</span>
                             </div>
                             <p style="margin-bottom: 1rem; color: #64748b;">Coloca una botella llena de agua en la caja del inodoro para reducir el consumo de agua en cada descarga.</p>
-                            <div class="file-upload">
-                                <label class="file-upload-label" for="evidence4">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    Subir Evidencia
-                                </label>
-                                <input type="file" id="evidence4" onchange="subirEvidencia(4)">
+                            <div class="challenge-actions">
+                                <button class="btn btn-primary" onclick="mostrarPDF('ahorro-agua')">
+                                    <i class="fas fa-book"></i>
+                                    Leer Guía
+                                </button>
+                                <div class="file-upload">
+                                    <label class="file-upload-label" for="evidence4">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        Subir Evidencia
+                                    </label>
+                                    <input type="file" id="evidence4" onchange="subirEvidencia(4)">
+                                </div>
+                                <button class="btn btn-secondary complete-task-btn" id="completeTask4" style="display: none; margin-top: 1rem; width: 100%;" onclick="completarDesafio(4)">
+                                    <i class="fas fa-check-circle"></i> Marcar como Completado
+                                </button>
                             </div>
-                            <button class="btn btn-primary complete-task-btn" id="completeTask4" style="display: none; margin-top: 1rem; width: 100%;" onclick="completarDesafio(4)">
-                                <i class="fas fa-check-circle"></i> Marcar como Completado
-                            </button>
                         </div>
 
                         <div class="challenge-card" data-difficulty="medio">
@@ -495,16 +502,22 @@
                                 <span class="challenge-badge points">200 puntos</span>
                             </div>
                             <p style="margin-bottom: 1rem; color: #64748b;">Recolecta 5 kilogramos de botellas PET para reciclaje.</p>
-                            <div class="file-upload">
-                                <label class="file-upload-label" for="evidence5">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    Subir Evidencia
-                                </label>
-                                <input type="file" id="evidence5" onchange="subirEvidencia(5)">
+                            <div class="challenge-actions">
+                                <button class="btn btn-primary" onclick="mostrarPDF('recicla-pet')">
+                                    <i class="fas fa-book"></i>
+                                    Leer Guía
+                                </button>
+                                <div class="file-upload">
+                                    <label class="file-upload-label" for="evidence5">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        Subir Evidencia
+                                    </label>
+                                    <input type="file" id="evidence5" onchange="subirEvidencia(5)">
+                                </div>
+                                <button class="btn btn-secondary complete-task-btn" id="completeTask5" style="display: none; margin-top: 1rem; width: 100%;" onclick="completarDesafio(5)">
+                                    <i class="fas fa-check-circle"></i> Marcar como Completado
+                                </button>
                             </div>
-                            <button class="btn btn-primary complete-task-btn" id="completeTask5" style="display: none; margin-top: 1rem; width: 100%;" onclick="completarDesafio(5)">
-                                <i class="fas fa-check-circle"></i> Marcar como Completado
-                            </button>
                         </div>
 
                         <div class="challenge-card" data-difficulty="facil">
@@ -517,16 +530,22 @@
                                 <span class="challenge-badge points">80 puntos</span>
                             </div>
                             <p style="margin-bottom: 1rem; color: #64748b;">Recolecta 100 tapitas de plástico para reciclaje.</p>
-                            <div class="file-upload">
-                                <label class="file-upload-label" for="evidence6">
-                                    <i class="fas fa-cloud-upload-alt"></i>
-                                    Subir Evidencia
-                                </label>
-                                <input type="file" id="evidence6" onchange="subirEvidencia(6)">
+                            <div class="challenge-actions">
+                                <button class="btn btn-primary" onclick="mostrarPDF('recicla-tapitas')">
+                                    <i class="fas fa-book"></i>
+                                    Leer Guía
+                                </button>
+                                <div class="file-upload">
+                                    <label class="file-upload-label" for="evidence6">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        Subir Evidencia
+                                    </label>
+                                    <input type="file" id="evidence6" onchange="subirEvidencia(6)">
+                                </div>
+                                <button class="btn btn-secondary complete-task-btn" id="completeTask6" style="display: none; margin-top: 1rem; width: 100%;" onclick="completarDesafio(6)">
+                                    <i class="fas fa-check-circle"></i> Marcar como Completado
+                                </button>
                             </div>
-                            <button class="btn btn-primary complete-task-btn" id="completeTask6" style="display: none; margin-top: 1rem; width: 100%;" onclick="completarDesafio(6)">
-                                <i class="fas fa-check-circle"></i> Marcar como Completado
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -597,6 +616,14 @@
                     gap: 1rem;
                 }
 
+                /* Estilos para hacer el botón 'Leer Guía' más pequeño */
+                .challenge-actions .btn-primary {
+                    padding: 0.5rem 1rem; /* Ajusta el padding vertical y horizontal */
+                    font-size: 0.8rem; /* Reduce el tamaño de la fuente */
+                    width: fit-content; /* Ajusta el ancho al contenido */
+                    align-self: flex-start; /* Alinea el botón a la izquierda */
+                }
+
                 .challenge-card {
                     background: white;
                     border-radius: var(--border-radius);
@@ -628,7 +655,19 @@
                             break;
                         case 'trueque-prendas':
                             pdfTitle.textContent = 'Guía: Trueque de Prendas';
-                            pdfViewer.src = 'pdfs/guia-trueque-prendas.pdf';
+                            pdfViewer.src = 'pdfs/Trueque de prendas.pdf';
+                            break;
+                        case 'ahorro-agua':
+                            pdfTitle.textContent = 'Guía: Ahorro de Agua';
+                            pdfViewer.src = 'pdfs/Ahorra agua con una botella.pdf';
+                            break;
+                        case 'recicla-pet':
+                            pdfTitle.textContent = 'Guía: Reciclaje de PET';
+                            pdfViewer.src = 'pdfs/Recicla PET.pdf';
+                            break;
+                        case 'recicla-tapitas':
+                            pdfTitle.textContent = 'Guía: Reciclaje de Tapitas';
+                            pdfViewer.src = 'pdfs/Recicla tapitas.pdf';
                             break;
                     }
                     
@@ -679,6 +718,72 @@
                             alert('Ya has completado este desafío.');
                         }
                     }
+                }
+
+                // Función para validar el dominio del correo electrónico
+                function validarDominioCorreo(correo) {
+                    const dominiosPermitidos = ['@cancun.tecnm.mx', '@cecyteqroo.edu.mx'];
+                    return dominiosPermitidos.some(dominio => correo.endsWith(dominio));
+                }
+
+                // Modificar la función crearUsuario para incluir la validación
+                function crearUsuario() {
+                    const correo = document.getElementById('correo').value;
+                    const nombre = document.getElementById('nombre').value;
+                    const matricula = document.getElementById('matricula').value;
+                    const materia = document.getElementById('materia').value;
+                    const semestre = document.getElementById('semestre').value;
+                    const grupo = document.getElementById('grupo').value;
+                    const clave = document.getElementById('clave').value;
+
+                    // Validar el dominio del correo
+                    if (!validarDominioCorreo(correo)) {
+                        alert('Por favor, utiliza un correo electrónico con los dominios permitidos: @cancun.tecnm.mx o @cecyteqroo.edu.mx');
+                        return;
+                    }
+
+                    // Resto de la validación y creación de usuario
+                    if (!correo || !nombre || !matricula || !materia || !semestre || !grupo || !clave) {
+                        alert('Por favor, completa todos los campos');
+                        return;
+                    }
+
+                    // Obtener usuarios existentes
+                    let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+                    // Verificar si el correo ya está registrado
+                    if (usuarios.some(u => u.correo === correo)) {
+                        alert('Este correo electrónico ya está registrado');
+                        return;
+                    }
+
+                    // Crear nuevo usuario
+                    const nuevoUsuario = {
+                        correo,
+                        nombre,
+                        matricula,
+                        materia,
+                        semestre,
+                        grupo,
+                        clave,
+                        puntos: 0,
+                        nivel: 1,
+                        insignias: [],
+                        desafiosCompletados: []
+                    };
+
+                    // Agregar usuario a la lista
+                    usuarios.push(nuevoUsuario);
+                    localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+                    // Iniciar sesión automáticamente
+                    localStorage.setItem('usuario_actual', JSON.stringify(nuevoUsuario));
+                    
+                    // Mostrar mensaje de éxito
+                    alert('Usuario creado exitosamente');
+                    
+                    // Actualizar la interfaz
+                    actualizarInterfaz();
                 }
             </script>
 
@@ -919,28 +1024,48 @@
                     </div>
 
                     <div class="videos-grid">
-                        <!-- Video 1: Reciclaje -->
+                        <!-- Videos de Reciclaje -->
                         <div class="video-card" data-category="reciclaje">
                             <div class="video-thumbnail">
-                                <img src="https://img.youtube.com/vi/1pR68oLOLd8/maxresdefault.jpg" alt="Guía de Reciclaje">
-                                <div class="video-play-button" onclick="abrirVideo('1pR68oLOLd8', 'Guía Completa de Reciclaje', 'Aprende a reciclar correctamente los diferentes tipos de materiales y contribuye a un mundo más sostenible.')">
+                                <img src="https://img.youtube.com/vi/SpJhOTTG6X4/maxresdefault.jpg" alt="Importancia del Reciclaje">
+                                <div class="video-play-button" onclick="abrirVideo('SpJhOTTG6X4', 'La Importancia del Reciclaje', 'Descubre por qué reciclar es crucial para el futuro de nuestro planeta y cómo puedes contribuir.')">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="video-info">
-                                <h3 class="video-title">Guía Completa de Reciclaje</h3>
-                                <p class="video-description">Aprende a reciclar correctamente los diferentes tipos de materiales y contribuye a un mundo más sostenible.</p>
+                                <h3 class="video-title">La Importancia del Reciclaje</h3>
+                                <p class="video-description">Descubre por qué reciclar es crucial para el futuro de nuestro planeta y cómo puedes contribuir.</p>
                                 <div class="video-meta">
                                     <div class="video-duration">
                                         <i class="fas fa-clock"></i>
-                                        <span>8:45</span>
+                                        <span>5:10</span>
                                     </div>
                                     <span class="video-category reciclaje">Reciclaje</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Video 2: Agua -->
+                        <div class="video-card" data-category="reciclaje">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/UQSGn_Kbfm0/maxresdefault.jpg" alt="Economía Circular">
+                                <div class="video-play-button" onclick="abrirVideo('UQSGn_Kbfm0', 'Principios de la Economía Circular', 'Entiende cómo la economía circular puede transformar la producción y el consumo para un futuro sostenible.')">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">Principios de la Economía Circular</h3>
+                                <p class="video-description">Entiende cómo la economía circular puede transformar la producción y el consumo para un futuro sostenible.</p>
+                                <div class="video-meta">
+                                    <div class="video-duration">
+                                        <i class="fas fa-clock"></i>
+                                        <span>8:25</span>
+                                    </div>
+                                    <span class="video-category reciclaje">Reciclaje</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Videos de Agua -->
                         <div class="video-card" data-category="agua">
                             <div class="video-thumbnail">
                                 <img src="https://img.youtube.com/vi/3Xxr7afS8dU/maxresdefault.jpg" alt="Ahorro de Agua">
@@ -961,70 +1086,6 @@
                             </div>
                         </div>
 
-                        <!-- Video 3: Plástico -->
-                        <div class="video-card" data-category="plastico">
-                            <div class="video-thumbnail">
-                                <img src="https://img.youtube.com/vi/6R8xy0tNjKY/maxresdefault.jpg" alt="Alternativas al Plástico">
-                                <div class="video-play-button" onclick="abrirVideo('6R8xy0tNjKY', 'Alternativas al Plástico', 'Descubre opciones sostenibles para reducir el uso de plásticos en tu vida diaria.')">
-                                    <i class="fas fa-play"></i>
-                                </div>
-                            </div>
-                            <div class="video-info">
-                                <h3 class="video-title">Alternativas al Plástico</h3>
-                                <p class="video-description">Descubre opciones sostenibles para reducir el uso de plásticos en tu vida diaria.</p>
-                                <div class="video-meta">
-                                    <div class="video-duration">
-                                        <i class="fas fa-clock"></i>
-                                        <span>7:15</span>
-                                    </div>
-                                    <span class="video-category plastico">Plástico</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 4: Consumo Responsable -->
-                        <div class="video-card" data-category="consumo">
-                            <div class="video-thumbnail">
-                                <img src="https://img.youtube.com/vi/8xAAZ9Lt7uU/maxresdefault.jpg" alt="Consumo Responsable">
-                                <div class="video-play-button" onclick="abrirVideo('8xAAZ9Lt7uU', 'Guía de Consumo Responsable', 'Aprende a tomar decisiones de compra más sostenibles y reducir tu impacto ambiental.')">
-                                    <i class="fas fa-play"></i>
-                                </div>
-                            </div>
-                            <div class="video-info">
-                                <h3 class="video-title">Guía de Consumo Responsable</h3>
-                                <p class="video-description">Aprende a tomar decisiones de compra más sostenibles y reducir tu impacto ambiental.</p>
-                                <div class="video-meta">
-                                    <div class="video-duration">
-                                        <i class="fas fa-clock"></i>
-                                        <span>9:20</span>
-                                    </div>
-                                    <span class="video-category consumo">Consumo Responsable</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 5: Reciclaje -->
-                        <div class="video-card" data-category="reciclaje">
-                            <div class="video-thumbnail">
-                                <img src="https://img.youtube.com/vi/7FUqFIDpj80/maxresdefault.jpg" alt="Reciclaje Creativo">
-                                <div class="video-play-button" onclick="abrirVideo('7FUqFIDpj80', 'Reciclaje Creativo en Casa', 'Ideas innovadoras para reutilizar materiales y darles una segunda vida.')">
-                                    <i class="fas fa-play"></i>
-                                </div>
-                            </div>
-                            <div class="video-info">
-                                <h3 class="video-title">Reciclaje Creativo en Casa</h3>
-                                <p class="video-description">Ideas innovadoras para reutilizar materiales y darles una segunda vida.</p>
-                                <div class="video-meta">
-                                    <div class="video-duration">
-                                        <i class="fas fa-clock"></i>
-                                        <span>10:45</span>
-                                    </div>
-                                    <span class="video-category reciclaje">Reciclaje</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Video 6: Agua -->
                         <div class="video-card" data-category="agua">
                             <div class="video-thumbnail">
                                 <img src="https://img.youtube.com/vi/1kUE0BZtTRc/maxresdefault.jpg" alt="Crisis del Agua">
@@ -1045,42 +1106,82 @@
                             </div>
                         </div>
 
-                        <!-- Video 7: Plástico -->
-                        <div class="video-card" data-category="plastico">
+                        <div class="video-card" data-category="agua">
                             <div class="video-thumbnail">
-                                <img src="https://img.youtube.com/vi/6R8xy0tNjKY/maxresdefault.jpg" alt="Impacto del Plástico">
-                                <div class="video-play-button" onclick="abrirVideo('6R8xy0tNjKY', 'El Impacto del Plástico en el Océano', 'Conoce cómo el plástico afecta a los océanos y qué podemos hacer para reducir su impacto.')">
+                                <img src="https://img.youtube.com/vi/WOR0ytnVuB4/maxresdefault.jpg" alt="Ciclo del Agua">
+                                <div class="video-play-button" onclick="abrirVideo('WOR0ytnVuB4', 'El Ciclo del Agua y su Conservación', 'Aprende sobre el ciclo natural del agua y las mejores prácticas para conservarla en tu vida diaria.')">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="video-info">
-                                <h3 class="video-title">El Impacto del Plástico en el Océano</h3>
-                                <p class="video-description">Conoce cómo el plástico afecta a los océanos y qué podemos hacer para reducir su impacto.</p>
+                                <h3 class="video-title">El Ciclo del Agua y su Conservación</h3>
+                                <p class="video-description">Aprende sobre el ciclo natural del agua y las mejores prácticas para conservarla en tu vida diaria.</p>
                                 <div class="video-meta">
                                     <div class="video-duration">
                                         <i class="fas fa-clock"></i>
-                                        <span>8:15</span>
+                                        <span>7:40</span>
+                                    </div>
+                                    <span class="video-category agua">Agua</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Videos de Plástico -->
+                        <div class="video-card" data-category="plastico">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/6R8xy0tNjKY/maxresdefault.jpg" alt="Alternativas al Plástico">
+                                <div class="video-play-button" onclick="abrirVideo('6R8xy0tNjKY', 'Alternativas al Plástico', 'Descubre opciones sostenibles para reducir el uso de plásticos en tu vida diaria.')">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">Alternativas al Plástico</h3>
+                                <p class="video-description">Descubre opciones sostenibles para reducir el uso de plásticos en tu vida diaria.</p>
+                                <div class="video-meta">
+                                    <div class="video-duration">
+                                        <i class="fas fa-clock"></i>
+                                        <span>7:15</span>
                                     </div>
                                     <span class="video-category plastico">Plástico</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Video 8: Consumo Responsable -->
+                        <!-- Videos de Consumo Responsable -->
                         <div class="video-card" data-category="consumo">
                             <div class="video-thumbnail">
-                                <img src="https://img.youtube.com/vi/8xAAZ9Lt7uU/maxresdefault.jpg" alt="Moda Sostenible">
-                                <div class="video-play-button" onclick="abrirVideo('8xAAZ9Lt7uU', 'Moda Sostenible y Consumo Ético', 'Aprende sobre la importancia de la moda sostenible y cómo hacer compras más conscientes.')">
+                                <img src="https://img.youtube.com/vi/8xAAZ9Lt7uU/maxresdefault.jpg" alt="Consumo Responsable">
+                                <div class="video-play-button" onclick="abrirVideo('8xAAZ9Lt7uU', 'Guía de Consumo Responsable', 'Aprende a tomar decisiones de compra más sostenibles y reducir tu impacto ambiental.')">
                                     <i class="fas fa-play"></i>
                                 </div>
                             </div>
                             <div class="video-info">
-                                <h3 class="video-title">Moda Sostenible y Consumo Ético</h3>
-                                <p class="video-description">Aprende sobre la importancia de la moda sostenible y cómo hacer compras más conscientes.</p>
+                                <h3 class="video-title">Guía de Consumo Responsable</h3>
+                                <p class="video-description">Aprende a tomar decisiones de compra más sostenibles y reducir tu impacto ambiental.</p>
                                 <div class="video-meta">
                                     <div class="video-duration">
                                         <i class="fas fa-clock"></i>
-                                        <span>12:20</span>
+                                        <span>9:20</span>
+                                    </div>
+                                    <span class="video-category consumo">Consumo Responsable</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="video-card" data-category="consumo">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/C1M8WdkqXMA/maxresdefault.jpg" alt="Consumo Ético">
+                                <div class="video-play-button" onclick="abrirVideo('C1M8WdkqXMA', 'Impacto del Consumo Ético en el Medio Ambiente', 'Descubre cómo tus decisiones de compra pueden influir positivamente en el medio ambiente y la sociedad.')">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">Impacto del Consumo Ético en el Medio Ambiente</h3>
+                                <p class="video-description">Descubre cómo tus decisiones de compra pueden influir positivamente en el medio ambiente y la sociedad.</p>
+                                <div class="video-meta">
+                                    <div class="video-duration">
+                                        <i class="fas fa-clock"></i>
+                                        <span>9:55</span>
                                     </div>
                                     <span class="video-category consumo">Consumo Responsable</span>
                                 </div>
@@ -1179,27 +1280,32 @@
     <div id="quizModal" class="modal">
         <div class="modal-content quiz-modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="quizTitulo">Quiz: Nombre del Desafío</h3>
-                <button class="close-modal" onclick="cerrarModalQuiz()">&times;</button>
+                <h3 class="modal-title" id="quizTitulo">
+                    <i class="fas fa-question-circle"></i>
+                    Quiz: Nombre del Desafío
+                </h3>
+                <button class="close-modal" onclick="cerrarModalQuiz()">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
             <div class="quiz-container">
-                <div class="quiz-pdf-viewer" id="pdfViewer">
-                    <div class="pdf-placeholder">
-                        <i class="fas fa-file-pdf"></i>
-                        <span>Cargando material educativo...</span>
-                    </div>
-                    <iframe id="pdfFrame" style="width: 100%; height: 300px; border: none; display: none;"></iframe>
+                <div class="quiz-intro">
+                    <p>Demuestra tu conocimiento sobre el tema respondiendo las siguientes preguntas. Cada respuesta correcta te dará puntos adicionales.</p>
                 </div>
                 <div class="quiz-questions" id="quizQuestions">
                     <!-- Las preguntas se generarán dinámicamente -->
                 </div>
                 <div class="quiz-controls">
+                    <button type="button" class="btn btn-secondary" onclick="cerrarModalQuiz()">
+                        <i class="fas fa-times"></i> Cancelar
+                    </button>
                     <button type="button" class="btn btn-primary" id="submitQuiz" onclick="evaluarQuiz()">
                         <i class="fas fa-check-circle"></i> Enviar respuestas
                     </button>
                 </div>
                 <div class="quiz-results" id="quizResults" style="display: none;">
                     <div class="result-header">
+                        <i class="fas fa-award" style="font-size: 3rem; color: #22c55e; margin-bottom: 1rem;"></i>
                         <h3>Resultados del Quiz</h3>
                         <div class="score">
                             Puntuación: <span id="quizScore">0/0</span>
@@ -1207,8 +1313,8 @@
                     </div>
                     <div class="result-message" id="resultMessage"></div>
                     <div class="quiz-actions">
-                        <button type="button" class="btn btn-secondary" onclick="cerrarModalQuiz()">
-                            <i class="fas fa-times"></i> Cerrar
+                        <button type="button" class="btn btn-primary" onclick="cerrarModalQuiz()">
+                            <i class="fas fa-check"></i> Continuar
                         </button>
                     </div>
                 </div>
@@ -1235,5 +1341,176 @@
 
 
     <script src="js/main.js"></script>
+    <style>
+        /* Estilos para el modal del quiz */
+        .quiz-modal-content {
+            max-width: 800px;
+            width: 90%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .quiz-container {
+            padding: 2rem;
+        }
+
+        .quiz-question {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            transition: transform 0.2s ease;
+        }
+
+        .quiz-question:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-question h4 {
+            color: #1e293b;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .quiz-option {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quiz-option:hover {
+            background: #f1f5f9;
+            border-color: #22c55e;
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 0.75rem;
+            width: 18px;
+            height: 18px;
+            accent-color: #22c55e;
+        }
+
+        .quiz-option span {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .quiz-controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .quiz-results {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .result-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .result-header h3 {
+            color: #1e293b;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .score {
+            font-size: 1.25rem;
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        .success-message {
+            background: #dcfce7;
+            border: 1px solid #86efac;
+            color: #166534;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .error-message {
+            background: #fee2e2;
+            border: 1px solid #fecaca;
+            color: #991b1b;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .success-message i,
+        .error-message i {
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+
+        .quiz-actions {
+            margin-top: 1.5rem;
+        }
+
+        /* Animación para las preguntas */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .quiz-question {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        /* Estilo para el botón de enviar */
+        #submitQuiz {
+            background: #22c55e;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        #submitQuiz:hover {
+            background: #16a34a;
+            transform: translateY(-1px);
+        }
+
+        /* Estilo para el título del quiz */
+        .modal-title {
+            color: #1e293b;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            background: #f8fafc;
+            border-radius: 15px 15px 0 0;
+        }
+    </style>
 </body>
 </html>
